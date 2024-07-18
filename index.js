@@ -4,10 +4,10 @@
       second: 'numeric',
       minute: 'numeric',
       hour: 'numeric',
+      day: 'long',
       month: 'long',
       year: 'numeric',
       weekday: 'numeric',
-      season: 'long',
     }
 
     const now = new Date()
