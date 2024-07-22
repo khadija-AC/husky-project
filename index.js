@@ -6,10 +6,15 @@
       hour: 'numeric',
       day: 'long',
       month: 'long',
-     
+      year: 'numeric',
+
+
+      
 
 
 
+
+      
     }
 
     const now = new Date()
