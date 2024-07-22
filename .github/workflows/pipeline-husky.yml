@@ -7,43 +7,14 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: git clone https://github.com/khadija-AC/husky-project.git
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: npm install node
         with:
           node-version: '20'
 
       - name: Install dependencies
         run: npm install
-
-      - name: ls
-        run: ls -a
-
-      - name: identification
-        run: |
-          git config --global user.email "khadijaaws21@gmail.com"
-          git config --global user.name "khadija-AC"
-
-      - name: Permission
-        run: |
-         chmod +x .husky/pre-commit
-         chmod +x .husky/commit-msg
-         chmod +x .husky/prepare-commit-msg
-      
-     
-      - name: Add Changes
-        run: |
-          git add .
-          git commit -m "feat: add test for husky integration"
-      
-      - name: Verification(cat index.js)
-        run: cat index.js
-
-      - name: Comment on PR if lint fails
-        if: ${{ failure() }}
-        run: |
-          echo "Lint checks failed. Please review and fix the issues."
-          exit 1
 
       
