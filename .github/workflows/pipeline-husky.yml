@@ -36,7 +36,9 @@ jobs:
         run: |
           git add .
           git commit -m "feat: add test for husky integration"
-
+          
+      - name: Verification(cat index.js)
+        run: cat index.js
 
       - name: Comment on PR if lint fails
         if: ${{ failure() }}
@@ -44,5 +46,4 @@ jobs:
           echo "Lint checks failed. Please review and fix the issues."
           exit 1
 
-      - name: Run Prettier
-        run: npx prettier --write .
+      
