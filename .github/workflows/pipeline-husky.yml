@@ -37,9 +37,11 @@ jobs:
           git add .
           git commit -m "feat: add test for husky integration"
 
-      - name: Push set
+      - name: Push changes
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-            git remote set-url origin https://khadija-AC:M144052390m@github.com/khadija-AC/husky-project.git
+            git remote set-url origin https://${GH_TOKEN}@github.com/khadija-AC/husky-project.git
             git push
 
       - name: Verification(cat index.js)
