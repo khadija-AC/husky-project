@@ -42,6 +42,9 @@ jobs:
         run: |
           git add .
           git commit -m "feat: add test for husky integration"
+
+      - name: test lint-staged
+        run: npx lint-staged
       
       - name: Verification(cat index.js)
         run: cat index.js
