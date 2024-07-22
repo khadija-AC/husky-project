@@ -38,9 +38,6 @@ jobs:
           git commit -m "feat: add test for husky integration"
 
 
-      - name: Puch Changes
-        run: git push origin main
-
       - name: Comment on PR if lint fails
         if: ${{ failure() }}
         run: |
