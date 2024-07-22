@@ -23,6 +23,9 @@ jobs:
       - name: version
         run: node -v
 
+      - name: verification Package.json
+        run: cat package.json
+
       - name: identification
         run: |
           git config --global user.email "khadijaaws21@gmail.com"
