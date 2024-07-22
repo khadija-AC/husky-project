@@ -44,7 +44,7 @@ jobs:
           git commit -m "feat: add test for husky integration"
 
       - name: test lint-staged
-        run: npx lint-staged
+        run: npx eslint --fix .
       
       - name: Verification(cat index.js)
         run: cat index.js
