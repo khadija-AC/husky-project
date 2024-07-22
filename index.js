@@ -1,12 +1,15 @@
 ;(function (exports) {
   function greet(name) {
     const options = {
+
+
+
       second: 'numeric',
       minute: 'numeric',
       hour: 'numeric',
       day: 'long',
       month: 'long',
-      year: 'numeric',
+      
     }
 
     const now = new Date()
