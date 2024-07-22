@@ -1,0 +1,53 @@
+
+name: Lint and Format
+
+on: [push, pull_request]
+
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: ls
+        run: ls -a
+
+      - name: identification
+        run: |
+          git config --global user.email "khadijaaws21@gmail.com"
+          git config --global user.name "khadija-AC"
+
+      - name: Permission
+        run: |
+         chmod +x .husky/pre-commit
+         chmod +x .husky/commit-msg
+         chmod +x .husky/prepare-commit-msg
+      
+     
+      - name: Add Changes
+        run: git add .
+
+      - name: Commit Changes
+        run: git commit -m "commit for test"
+
+      - name: Puch Changes
+        run: git push origin main
+
+      - name: Comment on PR if lint fails
+        if: ${{ failure() }}
+        run: |
+          echo "Lint checks failed. Please review and fix the issues."
+          exit 1
+
+      - name: Run Prettier
+        run: npx prettier --write .
