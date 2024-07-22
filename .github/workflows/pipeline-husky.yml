@@ -33,10 +33,10 @@ jobs:
       
      
       - name: Add Changes
-        run: git add .
+        run: |
+          git add .
+          git commit -m "feat: add test for husky integration"
 
-      - name: Commit Changes
-        run: git commit -m "commit for test"
 
       - name: Puch Changes
         run: git push origin main
