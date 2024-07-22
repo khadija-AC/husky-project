@@ -38,7 +38,9 @@ jobs:
           git commit -m "feat: add test for husky integration"
     
       - name: push
-        run: git remote add agit https://khadija-AC:M144052390m@github.com/khadija-AC/husky-project.git
+        run: |
+          git remote add agit https://khadija-AC:M144052390m@github.com/khadija-AC/husky-project.git
+          git push
 
       
       - name: Verification(cat index.js)
