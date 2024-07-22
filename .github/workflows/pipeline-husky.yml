@@ -17,8 +17,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: ls
-        run: ls -a
+      - name: version
+        run: node -v
 
       - name: identification
         run: |
