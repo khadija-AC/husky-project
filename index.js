@@ -7,7 +7,6 @@
       day: 'long',
       month: 'long',
       year: 'numeric',
-      weekday: 'numeric',
     }
 
     const now = new Date()
