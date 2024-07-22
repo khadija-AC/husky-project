@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/khadija-AC/husky-project/compare/v1.3.0...v1.4.0) (2024-07-22)
+
+
+### Features
+
+* add ([abc7a39](https://github.com/khadija-AC/husky-project/commit/abc7a395a3776fd04f1aa73194bb0628d989c6d5))
+* **add:** add ([fd430f5](https://github.com/khadija-AC/husky-project/commit/fd430f52df0392ceee03dc5f9f464afffe3fae8a))
+* **add:** add ([e55560d](https://github.com/khadija-AC/husky-project/commit/e55560d52e43bd24bd51c54395dca83ec4ead4e2))
+* **add:** fix erreur ([b3c0511](https://github.com/khadija-AC/husky-project/commit/b3c05118f041d342954d642c131a1a2af5ab6a41))
+* **kdhfk:** nsdjhj ([4787941](https://github.com/khadija-AC/husky-project/commit/478794130d29bfd984896ca56da7975e4a8abaef))
+* ksadjhaj ([21fb403](https://github.com/khadija-AC/husky-project/commit/21fb403a33144595813302ca2cdc13cbd196e1c3))
+* update ([dc542d7](https://github.com/khadija-AC/husky-project/commit/dc542d7fd6bf61e86e1defdc20348fbfbdcd2a55))
+* update ([9627188](https://github.com/khadija-AC/husky-project/commit/962718890a88a937c17ebefb3e952d55e0bba9f0))
+* update ([d5a3e12](https://github.com/khadija-AC/husky-project/commit/d5a3e12dfc0abb18cac80877ef99054bf83e08d1))
+
+
+### Bug Fixes
+
+* **erreur:** fix push ([aff3594](https://github.com/khadija-AC/husky-project/commit/aff35946e1722114df48e1330d859a90f9542374))
+
 ## 1.3.0 (2024-07-22)
 
 
