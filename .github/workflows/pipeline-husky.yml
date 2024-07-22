@@ -13,18 +13,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20'
-      
-      - name: install lint-staged
-        run: npm install lint-staged@15.2.7 --save-dev
 
       - name: Install dependencies
         run: npm install
 
       - name: version
         run: node -v
-
-      - name: verification Package.json
-        run: cat package.json
 
       - name: identification
         run: |

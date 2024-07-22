@@ -8,6 +8,7 @@
       minute: 'numeric',
       hour: 'numeric',
       day: 'long',
+      week: "numeric",
       month: 'long',
       year: 'numeric',
       weekday: "numeric",
