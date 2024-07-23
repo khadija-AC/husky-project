@@ -49,7 +49,7 @@ jobs:
           git config --global user.name "khadija-AC"
           if [ -n "$(git status --porcelain)" ]; then
             git add .
-            git commit -m "commit normal"
+            git commit -m "fix: resolve issue with comit"
             git push 
           fi
 
