@@ -11,9 +11,8 @@
       year: 'numeric',
       weekday: 'numeric',
     }
-    
 
-    const a=0;
+    const a = 0
     const now = new Date()
     const formattedDate = now.toLocaleDateString('en-US', options)
     return `Hello, ${name}! Today is ${formattedDate}.`
