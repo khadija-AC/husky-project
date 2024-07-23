@@ -2,8 +2,8 @@ name: Lint and format
 
 on: [push, pull_request]
 
-jobs:
 
+jobs:
   run-linters:
     permissions:
       contents: write
@@ -16,28 +16,44 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 20
 
       - name: Install Node.js dependencies
         run: npm install
 
+      - name: Permission
+        run: | 
+          chmod +x .husky/pre-commit
+          chmod +x .husky/prepare-commit-msg
+          chmod +x .husky/commit-msg
 
-      - name: identification
+      - name: Identification
         run: |
-           git config --global user.email "khadijaaws21@gmail.com"
-           git config --global user.name "khadija-AC"
- 
+          git config --global user.email "khadijaaws21@gmail.com"
+          git config --global user.name "khadija-AC"
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
           prettier: true
-          auto_fix: true
-    
-      - name: Verification(cat index.js)
-        run: cat index.js
 
-     
+      - name: Fix lint issues
+        run: npx eslint '**.js' --fix
+        
+      - name: Commit changes if any
+        run: |
+          git config --global user.email "khadijaaws21@gmail.com"
+          git config --global user.name "khadija-AC"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "commit normal"
+            git push 
+          fi
+
+      
+
+      - name: Verification (cat index.js)
+        run: cat index.js

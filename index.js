@@ -1,7 +1,7 @@
 ;(function (exports) {
   function greet(name) {
     const options = {
-      microsecond: 'numeric',
+     
       second: 'numeric',
       minute: 'numeric',
       hour: 'numeric',
@@ -9,12 +9,16 @@
       week: 'numeric',
       month: 'long',
       year: 'numeric',
-      weekday: 'numeric',
+      weekday: "numeric",
+
+
+
+
     }
     
 
-    const a=0;
-    const now = new Date()
+    const a=0
+    const now = new Date();
     const formattedDate = now.toLocaleDateString('en-US', options)
     return `Hello, ${name}! Today is ${formattedDate}.`
   }
