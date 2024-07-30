@@ -1,59 +1,40 @@
-name: Lint and format
+name: pipeline
 
-on: [push, pull_request]
-
+on: [pull_request,push]
 
 jobs:
-  run-linters:
-    permissions:
-      contents: write
-
-    name: Run linters
+  commit:
+    name: Conventional Commits
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Conventional Commits
+        uses: webiny/action-conventional-commits@v1.3.0
         with:
-          node-version: 20
+          
+          allowed-commit-types: "feat,fix,chore,docs,style,refactor,perf,test,build,revert,security" # Optional, set if you want a subset of commit types to be allowed.
 
-      - name: Install Node.js dependencies
-        run: npm install
+  linting:
+     name: Run linters
+     needs: commit
+     runs-on: ubuntu-latest
+     steps:
+       - name: Check out Git repository
+         uses: actions/checkout@v4
 
-      - name: Permission
-        run: | 
-          chmod +x .husky/pre-commit
-          chmod +x .husky/prepare-commit-msg
-          chmod +x .husky/commit-msg
+       - name: Set up Node.js
+         uses: actions/setup-node@v1
+         with:
+           node-version: 20
 
-      - name: Identification
-        run: |
-          git config --global user.email "khadijaaws21@gmail.com"
-          git config --global user.name "khadija-AC"
+       # ESLint and Prettier must be in `package.json`
+       - name: Install Node.js dependencies
+         run: npm ci
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
+       - name: Fix lint issues
+         run: npx eslint '**.js' --fix
 
-      - name: Fix lint issues
-        run: npx eslint '**.js' --fix
-        
-      - name: Commit changes if any
-        run: |
-          git config --global user.email "khadijaaws21@gmail.com"
-          git config --global user.name "khadija-AC"
-          if [ -n "$(git status --porcelain)" ]; then
-            git add .
-            git commit -m "fix: resolve issue with comit"
-            git push 
-          fi
-
-      
-
-      - name: Verification (cat index.js)
-        run: cat index.js
+       - name: Verification (cat index.js)
+         run: cat index.js
