@@ -61,6 +61,6 @@ jobs:
       - name: execute standard-version
         run: npx standard-version
         
-      - name: iwa 
+      - name: publish
         run: git push --follow-tags origin main && npm publish
          
