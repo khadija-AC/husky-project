@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.5.0 (2024-08-01)
+
+
+### Features
+
+* add permission ([8ecc7b8](https://github.com/khadija-AC/husky-project/commit/8ecc7b87b6d1988011dc0209906fc688445a9cbd))
+
 ## [1.4.0](https://github.com/khadija-AC/husky-project/compare/v1.3.0...v1.4.0) (2024-07-22)
 
 ### Features
