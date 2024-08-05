@@ -1,7 +1,7 @@
 name: linting and Automated Versioning
 
 on:
-  push
+  pull_request:
 
 jobs:
   commit:
