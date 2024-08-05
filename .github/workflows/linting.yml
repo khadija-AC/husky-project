@@ -19,12 +19,6 @@ jobs:
           
           allowed-commit-types: "feat,fix,chore,docs,style,refactor,perf,test,build,revert,security" # Optional, set if you want a subset of commit types to be allowed.
       
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-            name: commit-artifact
-            path: commit.txt
-  
   linting:
      name: Run linters
      runs-on: ubuntu-latest
@@ -46,5 +40,19 @@ jobs:
 
        - name: Verification (cat index.js)
          run: cat index.js
+
+  artifact:
+    name: Upload Artifact
+    runs-on: ubuntu-latest
+    needs: [commit, linting]
+    steps:
+      - name: Create output file
+       run: echo "Linting and commit verification completed successfully" > output.txt
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: commit-and-lint-output
+          path: output.txt
   
   

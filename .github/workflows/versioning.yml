@@ -21,9 +21,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-            name: commit-artifact
-            path: ./commit
-
+            name: commit-and-lint-output
 
       - name: identification
         run: |
