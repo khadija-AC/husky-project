@@ -1,47 +1,31 @@
-name: Versioning
-
+name: version
 on:
-  push:
-    branches:
+    push:
+     branches:
       - main
 
 jobs:
 
-  commit:
-    name: Conventional Commits
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v3
+    version:
+       name: Gestion Versions
+       runs-on: ubuntu-latest
+       steps:
 
-      - name: Conventional Commits
-        uses: webiny/action-conventional-commits@v1.3.0
-        with:
-          
-          allowed-commit-types: "feat,fix,chore,docs,style,refactor,perf,test,build,revert,security" 
-      
-  version:
-    name: Gestion Versions
-    needs: commit
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v4
+        - name: Check out Git repository
+          uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 20
+        - name: Set up Node.js
+          uses: actions/setup-node@v1
+          with:
+            node-version: 20
+     
+        - name: identification
+          run: |
+             git config --global user.email "khadijaaws21@gmail.com"
+             git config --global user.name "khadija-AC"
 
-      - name: identification
-        run: |
-         git config --global user.email "khadijaaws21@gmail.com"
-         git config --global user.name "khadija-AC"
+        - name: execute standard-version
+          run: npx standard-version
 
-      - name: execute standard-version
-        run: npx standard-version
-        
-      - name: Publish package
-        run: git push --follow-tags origin main 
-
-      
+        - name: push changes
+          run: git push --follow-tags origin main 

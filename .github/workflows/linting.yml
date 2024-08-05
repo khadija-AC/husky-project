@@ -1,31 +1,43 @@
-name: linting and Automated Versioning
+name: Conventional Commits
 
 on:
   pull_request:
+    branches:
+      - '**'
 
 jobs:
-  
+  commit:
+        name: Conventional Commits
+        runs-on: ubuntu-latest
+        steps:
+          - name: Check out Git repository
+            uses: actions/checkout@v3
+    
+          - name: Conventional Commits
+            uses: webiny/action-conventional-commits@v1.3.0
+            with:
+              allowed-commit-types: "feat,fix,chore,docs,style,refactor,perf,test,build,revert,security"
+
   linting:
-     name: Run linters
-     runs-on: ubuntu-latest
-     steps:
-       - name: Check out Git repository
-         uses: actions/checkout@v4
+    name: Run linters
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
 
-       - name: Set up Node.js
-         uses: actions/setup-node@v1
-         with:
-           node-version: 20
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20
 
-       # ESLint and Prettier must be in `package.json`
-       - name: Install Node.js dependencies
-         run: npm ci
+      # ESLint and Prettier must be in `package.json`
+      - name: Install Node.js dependencies
+        run: npm ci
 
-       - name: Fix lint issues
-         run: npx eslint '**.js' --fix
+      - name: Fix lint issues
+        run: npx eslint '**.js' --fix
 
-       - name: Verification (cat index.js)
-         run: cat index.js
+      - name: Verification (cat index.js)
+        run: cat index.js
 
-  
-  
+ 
