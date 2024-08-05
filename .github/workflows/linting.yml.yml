@@ -1,6 +1,6 @@
 name: Conventional Commits
 
-on: [pull_request,push]
+on: pull_request
 
 jobs:
   commit:
@@ -18,7 +18,7 @@ jobs:
 
   linting:
      name: Run linters
-     needs: commit
+     
      runs-on: ubuntu-latest
      steps:
        - name: Check out Git repository
@@ -39,28 +39,4 @@ jobs:
        - name: Verification (cat index.js)
          run: cat index.js
 
-  version: 
-    name: Gestion Versions
-    needs: linting
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 20
-
-      - name: identification
-        run: |
-         git config --global user.email "khadijaaws21@gmail.com"
-         git config --global user.name "khadija-AC"
-
-
-      - name: execute standard-version
-        run: npx standard-version
-        
-      - name: publish
-        run: git push --follow-tags origin main && npm publish
-         
+ 
