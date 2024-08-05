@@ -4,14 +4,10 @@ on:
   pull_request:
     branches:
       - '**'
-  push:
-    branches:
-      - main
 
 jobs:
   commit:
     name: Conventional Commits
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
@@ -25,7 +21,6 @@ jobs:
 
   linting:
      name: Run linters
-     if: github.event_name == 'pull_request'
      runs-on: ubuntu-latest
      steps:
        - name: Check out Git repository
@@ -46,32 +41,4 @@ jobs:
        - name: Verification (cat index.js)
          run: cat index.js
   
-  versioning:
-    name: Automated Versioning
-    if: github.event_name == 'push' 
-    needs: [commit,linting]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 20
-
-      - name: identification
-        run: |
-         git config --global user.email "khadijaaws21@gmail.com"
-         git config --global user.name "khadija-AC"
-
-      - name: execute standard-version
-        run: npx standard-version
-        
-      - name: Publish package
-        run: |
-          git push --follow-tags origin main 
-         # npm publish
-
-      
- 
+  
