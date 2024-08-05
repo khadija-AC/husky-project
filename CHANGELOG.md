@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.6.0 (2024-08-05)
+
+
+### Features
+
+* update workflows versioning ([17a5a94](https://github.com/khadija-AC/husky-project/commit/17a5a947c74216eb71f5fba157fca98bc1fd9126))
+
 ### 1.5.5 (2024-08-05)
 
 ### 1.5.4 (2024-08-05)
