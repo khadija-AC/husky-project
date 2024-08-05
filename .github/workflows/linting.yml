@@ -1,9 +1,7 @@
 name: linting and Automated Versioning
 
 on:
-  pull_request:
-    branches:
-      - '**'
+  push
 
 jobs:
   commit:
@@ -41,18 +39,5 @@ jobs:
        - name: Verification (cat index.js)
          run: cat index.js
 
-  artifact:
-    name: Upload Artifact
-    runs-on: ubuntu-latest
-    needs: [commit, linting]
-    steps:
-      - name: Create output file
-       run: echo "Linting and commit verification completed successfully" > output.txt
-      
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: commit-and-lint-output
-          path: output.txt
   
   
