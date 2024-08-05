@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.1 (2024-08-05)
+
+
+### Bug Fixes
+
+* separate The pipeline-husky workflow ([6b1997a](https://github.com/khadija-AC/husky-project/commit/6b1997aaf01133516a519ef7689d2805fcb7acc6))
+
 ## 1.5.0 (2024-08-01)
 
 
