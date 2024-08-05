@@ -10,7 +10,7 @@
       month: 'long',
       year: 'numeric',
 
-      // pull request khadija
+      // pull
     }
 
     const now = new Date()
