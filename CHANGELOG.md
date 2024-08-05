@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.7.0 (2024-08-05)
+
+
+### Features
+
+* test du pipeline (merge) ([ca344b1](https://github.com/khadija-AC/husky-project/commit/ca344b12117dc2efe68caa41400afe872bfd3084))
+
 ### 1.6.2 (2024-08-05)
 
 
