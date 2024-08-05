@@ -22,8 +22,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
             name: commit-artifact
-            path: ./commit
-
+           
 
       - name: identification
         run: |
