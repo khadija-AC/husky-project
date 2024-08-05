@@ -9,8 +9,6 @@
       week: 'numeric',
       month: 'long',
       year: 'numeric',
-
-      // pull
     }
 
     const now = new Date()
