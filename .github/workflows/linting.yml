@@ -18,7 +18,13 @@ jobs:
         with:
           
           allowed-commit-types: "feat,fix,chore,docs,style,refactor,perf,test,build,revert,security" # Optional, set if you want a subset of commit types to be allowed.
-
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+            name: commit-artifact
+            path: commit.txt
+  
   linting:
      name: Run linters
      runs-on: ubuntu-latest
