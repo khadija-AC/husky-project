@@ -48,8 +48,7 @@ jobs:
   
   versioning:
     name: Automated Versioning
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [linting, commit]
+    if: github.event_name == 'push' 
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
