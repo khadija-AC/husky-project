@@ -49,6 +49,7 @@ jobs:
   versioning:
     name: Automated Versioning
     if: github.event_name == 'push' 
+    needs: [commit,linting]
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
@@ -68,7 +69,9 @@ jobs:
         run: npx standard-version
         
       - name: Publish package
-        run: git push --follow-tags origin main 
+        run: |
+          git push --follow-tags origin main 
+         # npm publish
 
       
  
