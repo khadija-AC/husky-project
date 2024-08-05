@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.4 (2024-08-05)
+
+
+### Bug Fixes
+
+* fixe erreur in pipeline ([e7bf4c6](https://github.com/khadija-AC/husky-project/commit/e7bf4c63167108194cb46191c3801e79cf3c59cb))
+
 ### 1.5.3 (2024-08-05)
 
 ### 1.5.2 (2024-08-05)
