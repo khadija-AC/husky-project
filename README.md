@@ -49,3 +49,36 @@ Now your environment is ready to test this project.
 To test, edit the **index.js** file (e.g., by adding or removing a variable, or adding lines of code). If you encounter an error message from ESLint indicating that there is an error in the file (e.g., if you declare a variable or function that is never used), you must fix the problem to continue the commit.
 
 This way, you can test our project, and we hope it helps you in your future projects.
+
+ # Releasing
+
+  Now that you already have a few commits, it's time to create releases and by using semver, you will be able to show those changes on the changelog as patches, minor or major ones.
+
+First install standard-version as follows:
+~~~ bash
+npm i --save-dev standard-version
+~~~
+Then place this new scripts on your **package.json**:
+~~~ bash
+ "scripts": {
+    ...
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
+  },
+~~~
+Now just for only time do a initial release this way:
+~~~ bash
+npm run release -- --first-release
+~~~
+
+CONGRATS! now you have a wonderful auto-generated changelog.md based on your conventional commit messages.
+
+From now on after you commit your changes you will be able to run :
+~~~ bash
+npx standard-version
+git push --follow-tags origin main 
+~~~
+
+
