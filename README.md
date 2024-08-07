@@ -52,9 +52,9 @@ This way, you can test our project, and we hope it helps you in your future proj
 
  # Releasing
 
-  Now that you already have a few commits, it's time to create releases and by using semver, you will be able to show those changes on the changelog as patches, minor or major ones.
+  Now that you already have a few commits, it's time to create releases and by using semver, you will be able to show those changes on the changelog as **patches**, **minor** or **major** ones.
 
-First install standard-version as follows:
+First install **standard-version** as follows:
 ~~~ bash
 npm i --save-dev standard-version
 ~~~
@@ -73,7 +73,7 @@ Now just for only time do a initial release this way:
 npm run release -- --first-release
 ~~~
 
-CONGRATS! now you have a wonderful auto-generated changelog.md based on your conventional commit messages.
+CONGRATS! now you have a wonderful auto-generated **changelog.md** based on your conventional commit messages.
 
 From now on after you commit your changes you will be able to run :
 ~~~ bash
