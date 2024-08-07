@@ -1,34 +1,32 @@
 # husky-project
 
-# Objectif du Projet
+# Objective of the project
 
-Ce projet vise à améliorer la qualité du code en appliquant des pratiques strictes de gestion des commits et de formatage du code. Nous utilisons Husky pour faire respecter les commits conventionnels et garantir que le format de code est conforme avant chaque push. Cette approche permet de maintenir un codebase propre, cohérent et facile à maintenir, tout en facilitant le travail en équipe et en minimisant les erreurs potentielles.
+This project aims to improve code quality by enforcing strict commit management and code formatting practices. We use Husky to enforce conventional commits and ensure that the code format is compliant before each push. This approach helps maintain a clean, consistent, and maintainable codebase, while facilitating teamwork and minimizing potential errors.
 
-# Guide de Test
+# Test Guide
 
-Pour tester ce projet, suivez les étapes suivantes :
+To test this project, follow these steps:
 
-1. Clonez ce dépôt sur votre machine à l'aide de la commande :
+1. Clone this repository to your machine using the command:
 
 ```bash
 git clone https://github.com/khadija-AC/husky-project.git
 ```
 
-2. Accédez au répertoire du projet avec la commande :
-
+2. Navigate to the project directory with the command:
 ```bash
 cd husky-project
 ```
 
-3. Une fois dans le répertoire husky-project, exécutez la commande suivante pour installer toutes les dépendances nécessaires :
-
+3.Once you navigate to the husky-project directory, run the following command to install all the necessary dependencies:
 ```bash
 npm install
 ```
 
-## Remarque
+## Note
 
-Si vous rencontrez des erreurs comme :
+If you encounter errors like:
 
 ```bash
 hint : The '.husky/pre-commit' hook was ignored it's not set as executable
@@ -36,7 +34,7 @@ hint : The '.husky/prepare-commit-msg' hook was ignored it's not set as executab
 hint : The '.husky/commit-msg' hook was ignored it's not set as executable
 ```
 
-Exécutez les commandes suivantes pour rendre les hooks exécutables :
+Run the following commands to make the hooks executable:
 
 ```bash
 chmod +x .husky/pre-commit
@@ -44,10 +42,10 @@ chmod +x .husky/prepare-commit-msg
 chmod +x .husky/commit-msg
 ```
 
-Maintenant, votre environnement est prêt pour tester ce projet.
+Now your environment is ready to test this project.
 
 # Test
 
-Pour tester, modifiez le fichier **index.js** (par exemple, en ajoutant ou supprimant une variable, ou en ajoutant des lignes de code). Si vous rencontrez un message d'erreur d'ESLint indiquant qu'il y a une erreur dans le fichier (par exemple, si vous déclarez une variable ou une fonction jamais utilisée), vous devez corriger le problème pour continuer le commit.
+To test, edit the **index.js** file (e.g., by adding or removing a variable, or adding lines of code). If you encounter an error message from ESLint indicating that there is an error in the file (e.g., if you declare a variable or function that is never used), you must fix the problem to continue the commit.
 
-Ainsi, vous pouvez tester notre projet, et nous espérons que cela vous aidera dans vos projets futurs.
+This way, you can test our project, and we hope it helps you in your future projects.
